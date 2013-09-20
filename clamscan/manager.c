@@ -389,7 +389,7 @@ static void scanfile(const char *filename, struct cl_engine *engine, const struc
         if (optget(opts, "keep-mbox")->enabled) {
             fmap_t *maptype = fmap(fd, 0, 0);
             if (maptype) {
-                type = cli_filetype2(maptype, engine);
+                type = cli_filetype2(maptype, engine, CL_TYPE_ANY);
                 funmap(maptype);
             }
         }
