@@ -405,6 +405,8 @@ extern int cl_countsigs(const char *path, unsigned int countoptions, unsigned in
 /* enable debug messages */
 extern void cl_debug(void);
 
+extern void cl_always_gen_section_hash(void);
+
 /* software versions */
 extern unsigned int cl_retflevel(void);
 extern const char *cl_retver(void);
