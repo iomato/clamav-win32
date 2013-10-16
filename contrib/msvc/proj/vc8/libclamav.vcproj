@@ -368,6 +368,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\..\libclamav\adc.c"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\..\libclamav\arc4.c"
 				>
 			</File>
@@ -744,6 +748,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\..\libclamav\xz_iface.c"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\..\libclamav\yc.c"
 				>
 			</File>
@@ -807,6 +815,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\..\libclamav\7z\7zCrcOpt.c"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\..\libclamav\7z\7zDec.c"
 					>
 				</File>
@@ -831,6 +843,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\..\libclamav\7z\Alloc.h"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\..\libclamav\7z\Bcj2.c"
 					>
 				</File>
@@ -851,7 +867,23 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\..\libclamav\7z\BraIA64.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\libclamav\7z\CpuArch.c"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\..\libclamav\7z\CpuArch.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\libclamav\7z\Delta.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\libclamav\7z\Delta.h"
 					>
 				</File>
 				<File
@@ -887,7 +919,39 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\..\libclamav\7z\RotateDefs.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\libclamav\7z\Sha256.h"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\..\libclamav\7z\Types.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\libclamav\7z\Xz.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\libclamav\7z\Xz.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\libclamav\7z\XzCrc64.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\libclamav\7z\XzCrc64.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\libclamav\7z\XzDec.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\libclamav\7z\XzIn.c"
 					>
 				</File>
 			</Filter>
@@ -1274,6 +1338,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\..\libclamav\adc.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\..\libclamav\arc4.h"
 				>
 			</File>
@@ -1295,6 +1363,10 @@
 			</File>
 			<File
 				RelativePath="..\..\..\..\libclamav\bignum.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\libclamav\bignum_fast.h"
 				>
 			</File>
 			<File
@@ -1735,6 +1807,10 @@
 			</File>
 			<File
 				RelativePath="..\..\..\..\libclamav\xar.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\libclamav\xz_iface.h"
 				>
 			</File>
 			<File

@@ -25,6 +25,7 @@ cl_engine_settings_free
 cl_scandesc_callback
 cl_scanfile_callback
 cl_set_clcb_msg
+cl_always_gen_section_hash
 
 ; Scanning
 cl_scandesc
