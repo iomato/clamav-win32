@@ -28,9 +28,9 @@
 #include "fmap.h"
 
 #define CL_FILE_MBUFF_SIZE 1024
-#define CL_PART_MBUFF_SIZE 1026
+#define CL_PART_MBUFF_SIZE 1028
 /* MAGIC_BUFFER_SIZE must be the bigger of the two sizes above */
-#define MAGIC_BUFFER_SIZE 1026
+#define MAGIC_BUFFER_SIZE 1028
 
 #define CL_TYPENO 500
 #define MAX_EMBEDDED_OBJ 10
@@ -79,6 +79,7 @@ typedef enum {
     CL_TYPE_SWF,
     CL_TYPE_JAVA,
     CL_TYPE_XAR,
+    CL_TYPE_XZ,
 
     /* Section for partition types */
     CL_TYPE_PART_ANY, /* unknown partition type */

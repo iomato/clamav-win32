@@ -557,8 +557,8 @@ else
     if test "$ZLIB_HOME" != "/usr"; then
 	CPPFLAGS="$CPPFLAGS -I$ZLIB_HOME/include"
 	save_LDFLAGS="$LDFLAGS"
-	LDFLAGS="$LDFLAGS -Wl,-rpath=$ZLIB_HOME/lib"
-	AC_CHECK_LIB([z], [inflateEnd], [LIBCLAMAV_LIBS="$LIBCLAMAV_LIBS -Wl,-rpath=$ZLIB_HOME/lib -lz"; FRESHCLAM_LIBS="$FRESHCLAM_LIBS -Wl,-rpath=$ZLIB_HOME/lib -lz"], AC_MSG_ERROR([Please install zlib and zlib-devel packages]))
+	LDFLAGS="$LDFLAGS -L$ZLIB_HOME/lib"
+	AC_CHECK_LIB([z], [inflateEnd], [LIBCLAMAV_LIBS="$LIBCLAMAV_LIBS -L$ZLIB_HOME/lib -lz"; FRESHCLAM_LIBS="$FRESHCLAM_LIBS -L$ZLIB_HOME/lib -lz"], AC_MSG_ERROR([Please install zlib and zlib-devel packages]))
 	AC_CHECK_LIB([z], [gzopen], [], AC_MSG_ERROR([Your zlib is missing gzopen()]))
 	LDFLAGS="$save_LDFLAGS"
     else
@@ -648,27 +648,81 @@ then
     fi
 fi
 
+AM_CONDITIONAL([HAVE_LIBBZ2], test "x$HAVE_LIBBZ2" = "xyes")
+
 AC_ARG_ENABLE([unrar],
 [  --disable-unrar	  do not build libclamunrar and libclamunrar_iface ],
 want_unrar=$enableval, want_unrar="yes")
 AM_CONDITIONAL([ENABLE_UNRAR],[test "$want_unrar" = "yes"])
 
-want_xml="yes"
+want_xml="auto"
 AC_ARG_ENABLE([xml],
 [  --disable-xml	  disable DMG and XAR support],
-want_xml=$enableval, want_xml="yes")
-AM_CONDITIONAL([ENABLE_XML],[test "$want_xml" = "yes"])
+want_xml=$enableval, want_xml="auto")
 
-if test "$want_xml" = "yes"
-then
-    AM_PATH_XML2(2.5.0)
-    AC_DEFINE([HAVE_LIBXML2],1,[Define to 1 if you have the 'libxml2' library (-lxml2).])
+working_xml="no"
+if test "$want_xml" != "no"; then
+  AC_MSG_CHECKING([for libxml2 installation])
+  AC_ARG_WITH([xml],
+  [  --with-xml=DIR	  path to directory containing libxml2 library (default=
+			  /usr/local or /usr if not found in /usr/local)],
+  [
+  if test "$withval"
+  then
+    XML_HOME="$withval"
+    AC_MSG_RESULT([using $XML_HOME])
+  fi
+  ], [
+  XML_HOME=/usr/local
+  if test ! -f "$XML_HOME/include/libxml/xmlreader.h"
+  then
+    XML_HOME=/usr
+  fi
+  AC_MSG_RESULT([$XML_HOME])
+  ])
+
+  AC_MSG_CHECKING([for xmlreader.h in $XML_HOME])
+
+  if test ! -f "$XML_HOME/include/libxml2/libxml/xmlreader.h"; then
+    AC_MSG_RESULT([not found])
+  else
+    AC_MSG_RESULT([found])
+    save_LIBS="$LIBS"
+    if test "$XML_HOME" != "/usr"; then
+	save_CPPFLAGS="$CPPFLAGS"
+	CPPFLAGS="$CPPFLAGS -I$XML_HOME/include"
+	save_LDFLAGS="$LDFLAGS"
+	LDFLAGS="$LDFLAGS -L$XML_HOME/lib"
+	AC_CHECK_LIB([xml2], [xmlTextReaderRead], [working_xml="yes";XML_CPPFLAGS="-I$XML_HOME/include/libxml2";XML_LIBS="-L$XML_HOME/lib -lxml2"], working_xml="no")
+	CPPFLAGS="$save_CPPFLAGS"
+	LDFLAGS="$save_LDFLAGS"
+    else
+	AC_CHECK_LIB([xml2], [xmlTextReaderRead], [working_xml="yes";XML_CPPFLAGS="-I$XML_HOME/include/libxml2";XML_LIBS="-lxml2"], working_xml="no")
+    fi
+    LIBS="$save_LIBS"
+  fi
+fi
+
+if test "$working_xml" = "yes"; then
+  AC_DEFINE([HAVE_LIBXML2],1,[Define to 1 if you have the 'libxml2' library (-lxml2).])
+  AC_DEFINE([ENABLE_XML],1,[Define to 1 if xml supported features can be enabled.])
+  AC_SUBST(XML_CPPFLAGS)
+  AC_SUBST(XML_LIBS)
+  AC_MSG_NOTICE([Compiling and linking with libxml2 from $XML_HOME])
 else
-    XML_CPPFLAGS=""
-    XML_LIBS=""
-    AC_SUBST(XML_CPPFLAGS)
-    AC_SUBST(XML_LIBS)
-    AC_DEFINE([HAVE_LIBXML2],0,[Define to 1 if you have the 'libxml2' library (-lxml2).])
+  if test "$want_xml" = "yes"; then
+     AC_MSG_ERROR([****** Please install libxml2 packages!])
+  else
+    if test "$want_xml" != "no"; then
+      AC_MSG_NOTICE([****** libxml2 support unavailable])
+    fi
+  fi
+  XML_CPPFLAGS=""
+  XML_LIBS=""
+  AC_SUBST(XML_CPPFLAGS)
+  AC_SUBST(XML_LIBS)
+  AC_DEFINE([HAVE_LIBXML2],0,[Define to 1 if you have the 'libxml2' library (-lxml2).])
+  AC_DEFINE([ENABLE_XML],0,[Define to 1 if xml supported features can be enabled.])
 fi
 
 AC_ARG_ENABLE([getaddrinfo],
