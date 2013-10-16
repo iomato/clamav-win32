@@ -452,6 +452,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\..\libclamav\dmg.c"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\..\libclamav\dsig.c"
 				>
 			</File>
@@ -489,6 +493,10 @@
 			</File>
 			<File
 				RelativePath="..\..\..\..\libclamav\hashtab.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\libclamav\hfsplus.c"
 				>
 			</File>
 			<File
@@ -656,6 +664,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\..\libclamav\sf_base64decode.c"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\..\libclamav\sha1.c"
 				>
 			</File>
@@ -745,6 +757,10 @@
 			</File>
 			<File
 				RelativePath="..\..\..\..\libclamav\wwunpack.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\libclamav\xar.c"
 				>
 			</File>
 			<File
@@ -1935,14 +1951,6 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\..\..\libclamav\dmg.c"
-					>
-				</File>
-				<File
-					RelativePath="..\..\..\..\libclamav\hfsplus.c"
-					>
-				</File>
-				<File
 					RelativePath="..\..\src\dllmain\jit-dynload.c"
 					>
 				</File>
@@ -1967,10 +1975,6 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\..\..\libclamav\sf_base64decode.c"
-					>
-				</File>
-				<File
 					RelativePath="..\..\src\dllmain\shared-misc.c"
 					>
 				</File>
@@ -1992,10 +1996,6 @@
 				</File>
 				<File
 					RelativePath="..\..\src\dllmain\winstat.c"
-					>
-				</File>
-				<File
-					RelativePath="..\..\..\..\libclamav\xar.c"
 					>
 				</File>
 			</Filter>
