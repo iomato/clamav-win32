@@ -89,6 +89,9 @@
 /* "default FD_SETSIZE value" */
 #define DEFAULT_FD_SETSIZE ((unsigned __int32) (-1))
 
+/* Define to 1 if xml supported features can be enabled. */
+#define ENABLE_XML 1
+
 /* use fanotify */
 #undef FANOTIFY
 
@@ -237,7 +240,7 @@
 #undef HAVE_LIBPDCURSES
 
 /* Define to 1 if you have the 'libxml2' library (-lxml2). */
-#undef HAVE_LIBXML2
+#define HAVE_LIBXML2 1
 
 /* Define to 1 if you have the `z' library (-lz). */
 #undef HAVE_LIBZ

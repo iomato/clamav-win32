@@ -43,8 +43,8 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../..;../../include;../../gnulib;../../../..;../../../../libclamav;../../../../libclamav/regex;../../../../libclamav/nsis;../../../../libclamav/lzma;../../../../win32/3rdparty/bzip2;../../../../win32/3rdparty/pthreads;../../../../win32/3rdparty/zlib"
-				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;HAVE_CONFIG_H;PTW32_STATIC_LIB"
+				AdditionalIncludeDirectories="../..;../../include;../../gnulib;../../../..;../../../../libclamav;../../../../libclamav/regex;../../../../libclamav/nsis;../../../../libclamav/lzma;../../../../win32/3rdparty/bzip2;../../../../win32/3rdparty/pthreads;../../../../win32/3rdparty/zlib;../../../../win32/3rdparty/libxml2/include"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;HAVE_CONFIG_H;PTW32_STATIC_LIB;LIBXML_STATIC"
 				MinimalRebuild="true"
 				ExceptionHandling="0"
 				BasicRuntimeChecks="3"
@@ -127,8 +127,8 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../..;../../include;../../gnulib;../../../..;../../../../libclamav;../../../../libclamav/regex;../../../../libclamav/nsis;../../../../libclamav/lzma;../../../../win32/3rdparty/bzip2;../../../../win32/3rdparty/pthreads;../../../../win32/3rdparty/zlib"
-				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;HAVE_CONFIG_H;PTW32_STATIC_LIB"
+				AdditionalIncludeDirectories="../..;../../include;../../gnulib;../../../..;../../../../libclamav;../../../../libclamav/regex;../../../../libclamav/nsis;../../../../libclamav/lzma;../../../../win32/3rdparty/bzip2;../../../../win32/3rdparty/pthreads;../../../../win32/3rdparty/zlib;../../../../win32/3rdparty/libxml2/include"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;HAVE_CONFIG_H;PTW32_STATIC_LIB;LIBXML_STATIC"
 				MinimalRebuild="true"
 				ExceptionHandling="0"
 				BasicRuntimeChecks="3"
@@ -211,8 +211,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="../..;../../include;../../gnulib;../../../..;../../../../libclamav;../../../../libclamav/regex;../../../../libclamav/nsis;../../../../libclamav/lzma;../../../../win32/3rdparty/bzip2;../../../../win32/3rdparty/pthreads;../../../../win32/3rdparty/zlib"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;HAVE_CONFIG_H;PTW32_STATIC_LIB"
+				AdditionalIncludeDirectories="../..;../../include;../../gnulib;../../../..;../../../../libclamav;../../../../libclamav/regex;../../../../libclamav/nsis;../../../../libclamav/lzma;../../../../win32/3rdparty/bzip2;../../../../win32/3rdparty/pthreads;../../../../win32/3rdparty/zlib;../../../../win32/3rdparty/libxml2/include"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;HAVE_CONFIG_H;PTW32_STATIC_LIB;LIBXML_STATIC"
 				ExceptionHandling="0"
 				SmallerTypeCheck="false"
 				RuntimeLibrary="2"
@@ -296,8 +296,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="../..;../../include;../../gnulib;../../../..;../../../../libclamav;../../../../libclamav/regex;../../../../libclamav/nsis;../../../../libclamav/lzma;../../../../win32/3rdparty/bzip2;../../../../win32/3rdparty/pthreads;../../../../win32/3rdparty/zlib"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;HAVE_CONFIG_H;PTW32_STATIC_LIB"
+				AdditionalIncludeDirectories="../..;../../include;../../gnulib;../../../..;../../../../libclamav;../../../../libclamav/regex;../../../../libclamav/nsis;../../../../libclamav/lzma;../../../../win32/3rdparty/bzip2;../../../../win32/3rdparty/pthreads;../../../../win32/3rdparty/zlib;../../../../win32/3rdparty/libxml2/include"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;HAVE_CONFIG_H;PTW32_STATIC_LIB;LIBXML_STATIC"
 				ExceptionHandling="0"
 				SmallerTypeCheck="false"
 				RuntimeLibrary="2"
@@ -1340,6 +1340,118 @@
 				</File>
 				<File
 					RelativePath="..\..\..\..\libclamav\tomsfastmath\addsub\s_fp_sub.c"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="libxml2"
+				>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\buf.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\buf.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\chvalid.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\dict.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\elfgcchack.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\enc.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\encoding.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\entities.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\error.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\globals.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\hash.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\libxml.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\list.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\parser.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\parserInternals.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\save.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\SAX.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\SAX2.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\threads.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\tree.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\uri.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\valid.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\xmlIO.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\xmlmemory.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\xmlreader.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\xmlsave.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\win32\3rdparty\libxml2\xmlstring.c"
 					>
 				</File>
 			</Filter>

@@ -29,6 +29,7 @@ libclamav_SOURCES+=$(addprefix $(top)/win32/3rdparty/bzip2/,blocksort.c bzlib.c 
 	crctable.c decompress.c huffman.c randtable.c)
 libclamav_SOURCES+=$(addprefix $(top)/win32/3rdparty/zlib/,adler32.c compress.c crc32.c \
 	deflate.c gzlib.c gzread.c gzwrite.c gzclose.c infback.c inffast.c inflate.c inftrees.c trees.c uncompr.c zutil.c)
+libclamav_SOURCES+=$(wildcard $(top)/win32/3rdparty/libxml2/*.c)
 
 libclamav_SOURCES+=$(wildcard $(top)/libclamav/7z/*.c)
 
